@@ -1,2 +1,7 @@
+# The executable
+ns
+
+# Object file, cache, temp, etc
+*.o
 .zig-cache/
 zig-out/
