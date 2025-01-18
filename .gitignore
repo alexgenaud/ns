@@ -1,5 +1,6 @@
-# The executable
+# The executables
 ns
+mcs
 
 # Object file, cache, temp, etc
 *.o

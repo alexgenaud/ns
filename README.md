@@ -1,39 +1,50 @@
-# ns
+# ns (nanoseconds) and mcs (microseconds)
 
-Blazingly ziggy fast nanosecond Unix timestamp written in a few Zig lines.
+Print nanosecond Unix timestamp. Blazingly fast. Written in a few Zig lines.
 
-In my experience (my computer in 2025), `ns` returns only microsecond precision.
+```
+$ ns
+1737006005004003002
+$ mcs
+1737006005004004
+```
+
+On my computer in 2025, `ns` returns only microsecond precision.
 However, we may hope that hardware, os, and zig
 will return true nanosecond timestamps in the mythical future:
 <https://github.com/ziglang/zig/blob/master/lib/std/time.zig>
 
-## build
+## Build and run ns (nanoseconds)
 
 ```
 zig build-exe ns.zig -OReleaseFast
-```
-
-## run
-
-```
 ./ns
 ```
 
-## output (one line)
+## Build and run mcs (microseconds)
 
 ```
-1731603603002001000
+zig build-exe mcs.zig -OReleaseFast
+./mcs
 ```
 
-```
--------------- no nanosecond
--------------- 1 microsecond
------------ 2 milliseconds
--------- 3 seconds
+## Output (one line)
 
------ 3600 seconds > 1 hour
-- 31557... seconds > 1 year
-17356..... seconds ~ 55 years
+```
+    ns
+    1731603603002001000
+
+    -------------- no nanosecond
+    -------------- 1 microsecond
+    ----------- 2 milliseconds
+    -------- 3 seconds
+
+    mcs
+    1731603603002001
+
+    ----- 3600 seconds > 1 hour
+    - 31557... seconds > 1 year
+    17356..... seconds ~ 55 years
 ```
 
 ## Limerick for humans
